@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual sales chart data</title>
+
+    <!-- link -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="line-chart" width="900px"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        const lineChart = document.getElementById("line-chart");
+
+        new Chart(lineChart, {
+            type: "line",
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                datasets: [
+                    {
+                        data: [40,60,200,150,100,700,900,800,790,820,950,1000],
+                        label : "Isogen",
+                        borderColor : "#3cba9f",
+                        fill: false
+                    },
+                    {
+                        data: [30,70,230,150,190,600,800,900,890,820,1000,1100],
+                        label : "Megacyte",
+                        borderColor : "#fc034e",
+                        fill: false
+                    }
+                ],
+            },
+            options: {
+                plugins: {
+                    title : {
+                        display: true,
+                        text: 'Graphic data of annual solar system material sales'
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>
